@@ -27,6 +27,17 @@ html {
   color: white !important;
 } */
 
+#corner-flag {
+  position: fixed;
+  z-index: 1000;
+  pointer-events: none;
+  top: -1rem;
+  left: -1rem;
+  width: 8rem;
+  height: 8rem;
+  opacity: 0.85;
+}
+
 .text-center {
   text-align: center;
 }
