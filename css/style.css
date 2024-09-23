@@ -1,0 +1,98 @@
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+:root {
+  --bg: #1a0015;
+  --color: white;
+  --card-bg: rgb(119, 35, 107);
+}
+
+/* TODO light theme */
+/* @media (prefers-color-scheme: light) {
+  :root {
+    --bg: #eee;
+  }
+} */
+
+html {
+  background-color: var(--bg);
+  color: var(--color);
+  font-family: monospace;
+  font-size: 1rem;
+  text-rendering: optimizeSpeed;
+}
+
+/* a {
+  color: white !important;
+} */
+
+.text-center {
+  text-align: center;
+}
+
+.host-list {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: unset;
+}
+
+.infra-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 1rem;
+}
+
+.infra-card {
+  box-sizing: content-box;
+  width: 16rem;
+  display: flex;
+  flex-direction: column;
+  background: var(--card-bg);
+  padding: 0.75rem;
+  border-radius: .5rem;
+  border: 1px solid var(--color);
+}
+
+.infra-card .infra-title {
+  text-align: center;
+  font-size: 1.12rem;
+  font-weight: bold;
+}
+
+.infra-card .infra-host {
+  text-align: center;
+  font-size: 0.85rem;
+}
+
+.infra-card .infra-host::before {
+  content: "Running on: ";
+}
+
+.separator {
+  margin: 0;
+  height: 0;
+  margin-top: 0.5rem;
+  margin-bottom: 0.5rem;
+  text-transform: uppercase;
+  border-bottom: 1px solid var(--color);
+}
+
+.infra-link {
+  color: var(--color) !important;
+}
+
+.infra-link:not(:last-child) {
+  padding-bottom: 0.25rem;
+}
+
+.infra-link.protected::after {
+  content: " 🔒";
+}
+
+.infra-link.cloudflare::after {
+  content: " ☁️";
+}

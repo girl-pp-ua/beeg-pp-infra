@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Infra</title>
+    <link rel="stylesheet" href="css/style.css">
+  </head>
+  <body>
+    <h1 class="text-center">beeg.pp.ua <span style="color:#aaa">&gt;</span> Infra</h1>
+    <p class="text-center">
+      🔒 - Protected by Authelia <br>
+      ☁️ - Cloudflare proxy
+    </p>
+    <p class="text-center">This page is a placeholder and will probably be replaced soon :p</p>
+
+    <h2 class="text-center">Hosts:</h2>
+    <div class="host-list">
+      <ul>
+        <li>
+          oci1 - Oracle Cloud Infrastructure (Frankfurt, Germany)<br>
+          <ul>
+            <li>oci1.beeg.pp.ua - Dual stack (IPv6/IPv4)</li>
+            <li>ipv6.oci1.beeg.pp.ua - IPv6 Only</li>
+            <li>ipv4.oci1.beeg.pp.ua - IPv4 Only</li>
+          </ul>
+        </li>
+        <li>
+          oci2 - Oracle Cloud Infrastructure (Frankfurt, Germany)<br>
+          <ul>
+            <li>oci2.beeg.pp.ua - Dual stack (IPv6/IPv4)</li>
+            <li>ipv6.oci2.beeg.pp.ua - IPv6 Only</li>
+            <li>ipv4.oci2.beeg.pp.ua - IPv4 Only</li>
+          </ul>
+        </li>
+        <!-- <li>
+          netlify - Page hosted on Netlify CDN
+        </li> -->
+      </ul>
+    </div>
+
+    <h2 class="text-center">Pubic Services:</h2>
+    <div class="infra-container">
+      <div class="infra-card">
+        <div class="infra-title">Public Files</div>
+        <div class="infra-host">oci1</div>
+        <span class="separator"></span>
+        <a class="infra-link" href="https://files.beeg.pp.ua/">files.beeg.pp.ua</a>
+        <a class="infra-link cloudflare" href="https://files-cf.beeg.pp.ua/">files-cf.beeg.pp.ua</a>
+      </div>
+      <div class="infra-card">
+        <div class="infra-title">Redlib</div>
+        <div class="infra-host">oci2</div>
+        <span class="separator"></span>
+        <a class="infra-link" href="https://redlib.beeg.pp.ua/">redlib.beeg.pp.ua</a>
+      </div>
+    </div>
+
+    <h2 class="text-center">Private Services:</h2>
+    <div class="infra-container">
+      <div class="infra-card">
+        <div class="infra-title">Authelia</div>
+        <div class="infra-host">oci1</div>
+        <span class="separator"></span>
+        <a class="infra-link protected" href="https://auth.beeg.pp.ua/">auth.beeg.pp.ua</a>
+        <a class="infra-link protected" href="https://authtest.beeg.pp.ua/">authest.beeg.pp.ua</a>
+        <a class="infra-link protected" href="https://authtest2.beeg.pp.ua/">authest2.beeg.pp.ua</a>
+      </div>
+      <div class="infra-card">
+        <div class="infra-title">Netdata</div>
+        <div class="infra-host">oci1, oci2</div>
+        <span class="separator"></span>
+        <a class="infra-link protected" href="https://netdata.oci1.beeg.pp.ua/">netdata.oci1.beeg.pp.ua</a>
+        <a class="infra-link protected" href="https://netdata.oci2.beeg.pp.ua/">netdata.oci2.beeg.pp.ua</a>
+      </div>
+      <div class="infra-card">
+        <div class="infra-title">UptimeKuma</div>
+        <div class="infra-host">oci1</div>
+        <span class="separator"></span>
+        <a class="infra-link protected" href="https://uptime.beeg.pp.ua/">uptime.beeg.pp.ua</a>
+      </div>
+      <div class="infra-card">
+        <div class="infra-title">wsb-ical-service</div>
+        <div class="infra-host">oci2</div>
+        <span class="separator"></span>
+        <span class="infra-link">wsb-ical-service.beeg.pp.ua</span>
+        <a class="infra-link protected" href="https://manage.wsb-ical-service.beeg.pp.ua/">manage.wsb-ical-service.beeg.pp.ua</a>
+      </div>
+      <div class="infra-card">
+        <div class="infra-title">turn-rs</div>
+        <div class="infra-host">oci2</div>
+        <span class="separator"></span>
+        <span class="infra-link">turn.beeg.pp.ua</span>
+        <span class="infra-link">stun.beeg.pp.ua</span>
+      </div>
+    </div>
+  </body>
+</html>
