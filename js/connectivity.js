@@ -3,7 +3,8 @@
 document.body.classList.add("can-test-connectivity");
 
 const failures = new Map();
-failures.set("default", { ok: 0, ko: 0 })
+// default is the control group (if any tests fail, we wont check other groups)
+failures.set("default", { ok: 0, ko: 0 });
 failures.set("ipv6", { ok: 0, ko: 0 });
 
 function updateFailureState(failureMode) {
@@ -11,6 +12,7 @@ function updateFailureState(failureMode) {
   const isCompleteFailure =
     (failures.get(failureMode).ko > 0) &&
     (failures.get(failureMode).ok == 0) &&
+    (failures.get("default").ok > 0) &&
     (failures.get("default").ko == 0);
 
   document.body.classList.toggle(
@@ -25,7 +27,7 @@ Array.from(document.getElementsByClassName("test-connectivity")).forEach(async e
   let ok = false;
   try {
     ok = (await fetch(elem.dataset.url, {
-      signal: AbortSignal.timeout(5000) // Timeout after 5 seconds
+      signal: AbortSignal?.timeout(5000) // Timeout after 5 seconds
     }).then(res => res.text())).includes("OK");
   } catch (e) {
     console.error(e);
