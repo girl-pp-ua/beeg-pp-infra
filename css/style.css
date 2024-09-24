@@ -55,7 +55,7 @@ html {
 }
 
 .infra-container {
-  --card-width: 17.5rem;
+  --card-width: 18rem;
   display: grid;
   grid-template-columns: repeat(auto-fit, var(--card-width));
   justify-content: center;
