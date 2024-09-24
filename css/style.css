@@ -68,6 +68,9 @@ html {
 body:not(.can-test-connectivity) .if-can-test-connectivity {
   display: none;
 }
+body.can-test-connectivity:not(.failure-ipv6) .if-failure-ipv6 {
+  display: none;
+}
 
 .infra-container {
   --card-width: 18rem;
