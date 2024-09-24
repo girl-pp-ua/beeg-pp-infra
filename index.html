@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Infra</title>
+    <link rel="shortcut icon" href="data:image/x-icon;," type="image/x-icon">
     <link rel="stylesheet" href="css/style.css">
     <script type="module" src="js/connectivity.js" async defer></script>
   </head>
@@ -23,7 +24,7 @@
         Green text indicates that the host is reachable from your machine over HTTPs:
       </div>
       <p class="hopa if-can-test-connectivity if-failure-ipv6">
-        Seems like your network does not support IPv6. Consider asking your ISP.
+        ⚠️ Seems like your network does not support IPv6. Consider asking your ISP.
       </p>
       <noscript>
         <div class="hopa">
@@ -124,7 +125,12 @@
         <div class="infra-host">oci2</div>
         <span class="separator"></span>
         <span class="infra-link">wsb-ical-service.beeg.pp.ua</span>
-        <a class="infra-link protected" href="https://manage.wsb-ical-service.beeg.pp.ua/">manage.wsb-ical-service.beeg.pp.ua</a>
+        <i class="hopa">
+          Admin:
+          <a class="infra-link protected" href="https://manage.wsb-ical-service.beeg.pp.ua/">
+            manage.wsb-ical-service.beeg.pp.ua
+          </a>
+        </i>
       </div>
       <div class="infra-card">
         <div class="infra-title">turn-rs</div>
@@ -132,6 +138,9 @@
         <span class="separator"></span>
         <span class="infra-link">turn.beeg.pp.ua</span>
         <span class="infra-link">stun.beeg.pp.ua</span>
+        <i class="hopa">
+          ⚠️ TURN is IPv4-only
+        </i>
       </div>
     </div>
     <footer class="text-center" style="margin-top: 5rem;">

@@ -2,23 +2,34 @@
 
 document.body.classList.add("can-test-connectivity");
 
+console.log("Testing connectivity...");
+
 const failures = new Map();
 // default is the control group (if any tests fail, we wont check other groups)
 failures.set("default", { ok: 0, ko: 0 });
 failures.set("ipv6", { ok: 0, ko: 0 });
 
-function updateFailureState(failureMode) {
-  // just like me frfr
-  const isCompleteFailure =
-    (failures.get(failureMode).ko > 0) &&
-    (failures.get(failureMode).ok == 0) &&
-    (failures.get("default").ok > 0) &&
-    (failures.get("default").ko == 0);
+function updateFailureState() {
+  for (const failureMode of failures.keys()) {
+    // do not probe the control group
+    if (failureMode == "default") continue;
 
-  document.body.classList.toggle(
-    "failure-" + failureMode,
-    isCompleteFailure
-  );
+    // just like me frfr
+    const isCompleteFailure =
+      (failures.get(failureMode).ko > 0) &&
+      (failures.get(failureMode).ok == 0) &&
+      (failures.get("default").ok > 0) &&
+      (failures.get("default").ko == 0);
+
+    if (isCompleteFailure) {
+      console.warn(`Probable "${failureMode}" failure mode`);
+    }
+
+    document.body.classList.toggle(
+      "failure-" + failureMode,
+      isCompleteFailure
+    );
+  }
 }
 
 Array.from(document.getElementsByClassName("test-connectivity")).forEach(async elem => {
@@ -37,7 +48,8 @@ Array.from(document.getElementsByClassName("test-connectivity")).forEach(async e
   const failureMode = elem.dataset.anal ?? "default";
   failures.get(failureMode)[ok ? "ok" : "ko"]++;
 
-  updateFailureState(failureMode);
+  console.log(ok ? "OK" : "KO", elem.dataset.url, failureMode);
+  updateFailureState();
 });
 
 // @license-end
