@@ -23,6 +23,10 @@ html {
   text-rendering: optimizeSpeed;
 }
 
+body {
+  padding-bottom: 33vh;
+}
+
 /* a {
   color: white !important;
 } */
