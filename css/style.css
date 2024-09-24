@@ -55,15 +55,23 @@ html {
 }
 
 .infra-container {
-  display: flex;
-  flex-wrap: wrap;
+  --card-width: 17.5rem;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, var(--card-width));
   justify-content: center;
   gap: 1rem;
 }
 
+@media screen and (min-width: 768px) {
+  .infra-container {
+    margin-left: 10vw;
+    margin-right: 10vw;
+  }
+}
+
 .infra-card {
-  box-sizing: content-box;
-  width: 16rem;
+  box-sizing: border-box;
+  width: var(--card-width);
   display: flex;
   flex-direction: column;
   background: var(--card-bg);
