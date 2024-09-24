@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Infra</title>
     <link rel="stylesheet" href="css/style.css">
+    <script type="module" src="js/connectivity.js" async defer></script>
   </head>
   <body>
     <img src="assets/trans-corner.svg" id="corner-flag" alt="Trans pride flag" aria-hidden="true">
@@ -14,25 +15,33 @@
       🔒 - Protected by Authelia <br>
       ☁️ - Cloudflare proxy
     </p>
-    <p class="text-center">This page is a placeholder and will probably be replaced soon :p</p>
+    <!-- <p class="text-center">This page is a placeholder and will probably be replaced soon :p</p> -->
 
     <h2 class="text-center">Hosts:</h2>
     <div class="host-list">
+      <div class="hopa if-can-test-connectivity">
+        Green text indicates that the host is reachable from your machine over HTTPs:
+      </div>
+      <noscript>
+        <div class="hopa">
+          Enable JavaScript to test connectivity to hosts.
+        </div>
+      </noscript>
       <ul>
         <li>
           oci1 - Oracle Cloud Infrastructure (Frankfurt, Germany)<br>
           <ul>
-            <li>oci1.beeg.pp.ua - Dual stack (IPv6/IPv4)</li>
-            <li>ipv6.oci1.beeg.pp.ua - IPv6 Only</li>
-            <li>ipv4.oci1.beeg.pp.ua - IPv4 Only</li>
+            <li class="test-connectivity" data-url="https://oci1.beeg.pp.ua/">oci1.beeg.pp.ua - Dual stack (IPv6/IPv4)</li>
+            <li class="test-connectivity" data-url="https://ipv6.oci1.beeg.pp.ua/">ipv6.oci1.beeg.pp.ua - IPv6 Only</li>
+            <li class="test-connectivity" data-url="https://ipv4.oci1.beeg.pp.ua/">ipv4.oci1.beeg.pp.ua - IPv4 Only</li>
           </ul>
         </li>
         <li>
           oci2 - Oracle Cloud Infrastructure (Frankfurt, Germany)<br>
           <ul>
-            <li>oci2.beeg.pp.ua - Dual stack (IPv6/IPv4)</li>
-            <li>ipv6.oci2.beeg.pp.ua - IPv6 Only</li>
-            <li>ipv4.oci2.beeg.pp.ua - IPv4 Only</li>
+            <li class="test-connectivity" data-url="https://oci2.beeg.pp.ua/">oci2.beeg.pp.ua - Dual stack (IPv6/IPv4)</li>
+            <li class="test-connectivity" data-url="https://ipv6.oci2.beeg.pp.ua/">ipv6.oci2.beeg.pp.ua - IPv6 Only</li>
+            <li class="test-connectivity" data-url="https://ipv4.oci2.beeg.pp.ua/">ipv4.oci2.beeg.pp.ua - IPv4 Only</li>
           </ul>
         </li>
         <li>

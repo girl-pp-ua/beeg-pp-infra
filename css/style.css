@@ -40,6 +40,7 @@ html {
   width: 8rem;
   height: 8rem;
   opacity: 0.85;
+  color: transparent;
 }
 
 .text-center {
@@ -52,6 +53,20 @@ html {
   justify-content: center;
   align-items: center;
   text-align: unset;
+}
+
+.test-connectivity.wait {
+  color: #ff5;
+}
+.test-connectivity.ok {
+  color: #5f5;
+}
+.test-connectivity.ko {
+  color: #f55;
+}
+
+body:not(.can-test-connectivity) .if-can-test-connectivity {
+  display: none;
 }
 
 .infra-container {
