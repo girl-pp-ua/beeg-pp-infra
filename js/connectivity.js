@@ -7,6 +7,7 @@ console.log("Testing connectivity...");
 const failures = new Map();
 // default is the control group (if any tests fail, we wont check other groups)
 failures.set("default", { ok: 0, ko: 0 });
+failures.set("ipv4", { ok: 0, ko: 0 });
 failures.set("ipv6", { ok: 0, ko: 0 });
 
 function updateFailureState() {
