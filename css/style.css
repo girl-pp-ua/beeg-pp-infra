@@ -43,6 +43,18 @@ html {
   color: transparent;
 }
 
+@media screen and (max-width: 768px) {
+  body {
+    margin-top: 3rem;
+  }
+  #corner-flag {
+    top: -1.66rem;
+    left: -1.66rem;
+    width: 7rem;
+    height: 7rem;
+  }
+}
+
 .text-center {
   text-align: center;
 }
