@@ -149,3 +149,21 @@ body.can-test-connectivity:not(.failure-ipv6) .if-failure-ipv6 {
 .infra-link.cloudflare::after {
   content: " ☁️";
 }
+
+
+
+@media screen and (min-width: 1100px) {
+  body::after {
+    content: ":3";
+    font-family: sans-serif;
+    font-size: 20rem;
+    opacity: 0.1;
+    pointer-events: none;
+    z-index: -9999;
+    position: fixed;
+    top: 0;
+    right: 0;
+    transform: translateX(-25%) translateY(0%) rotate(-30deg);
+    /* transition: opacity 0.5s; */
+  }
+}
