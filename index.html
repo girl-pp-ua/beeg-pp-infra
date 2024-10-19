@@ -20,7 +20,8 @@
 
     <h1 class="text-center">beeg.pp.ua <span class="hopa">&gt;</span> Infra</h1>
     <p class="text-center">
-      🔒 - Protected by Authelia <br>
+      🔒 - Protected (authelia)<br>
+      🔑 - Protected (password)<br>
       ☁️ - Cloudflare proxy
     </p>
     <!-- <p class="text-center">This page is a placeholder and will probably be replaced soon :p</p> -->
@@ -131,7 +132,7 @@
         <div class="infra-title">wsb-ical-service</div>
         <div class="infra-host">oci2</div>
         <span class="separator"></span>
-        <span class="infra-link">wsb-ical-service.beeg.pp.ua</span>
+        <span class="infra-link password">wsb-ical-service.beeg.pp.ua</span>
         <i class="hopa">
           Admin:
           <a class="infra-link protected" href="https://manage.wsb-ical-service.beeg.pp.ua/">
@@ -143,11 +144,17 @@
         <div class="infra-title">turn-rs</div>
         <div class="infra-host">oci2</div>
         <span class="separator"></span>
-        <span class="infra-link">turn.beeg.pp.ua</span>
-        <span class="infra-link">stun.beeg.pp.ua</span>
+        <span class="infra-link password">turn.beeg.pp.ua</span>
+        <span class="infra-link password">stun.beeg.pp.ua</span>
         <i class="hopa">
           ⚠️ TURN is IPv4-only
         </i>
+      </div>
+      <div class="infra-card">
+        <div class="infra-title">webdav</div>
+        <div class="infra-host">oci1</div>
+        <span class="separator"></span>
+        <a class="infra-link password" href="https://webdav.beeg.pp.ua/">webdav.beeg.pp.ua</a>
       </div>
     </div>
     <footer class="text-center" style="margin-top: 5rem;">
