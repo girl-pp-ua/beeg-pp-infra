@@ -8,6 +8,11 @@
   --card-bg: rgb(119, 35, 107);
 }
 
+::selection, ::-moz-selection {
+  background: #b66a94;
+  color: black;
+}
+
 /* TODO light theme */
 /* @media (prefers-color-scheme: light) {
   :root {
