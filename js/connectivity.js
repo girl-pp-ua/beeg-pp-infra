@@ -51,6 +51,8 @@ Array.from(document.getElementsByClassName("test-connectivity")).forEach(async e
 
   console.log(ok ? "OK" : "KO", elem.dataset.url, failureMode);
   updateFailureState();
+
+  elem.classList.remove("wait");
 });
 
 // @license-end

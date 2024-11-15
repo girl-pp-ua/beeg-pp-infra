@@ -13,15 +13,31 @@
   color: black;
 }
 
-/* TODO light theme */
-/* @media (prefers-color-scheme: light) {
+@media (prefers-color-scheme: light) {
   :root {
-    --bg: #eee;
+    --bg: linear-gradient(to bottom, #f6a8b4, #ffdddd 50%);
+    --color: black;
+    --card-bg: rgb(255, 200, 200);
   }
-} */
+}
+
+@media (prefers-reduced-motion) {
+  /* fuck it >:3 */
+  #oneko {
+    display: none;
+  }
+
+  /* Actually try to make that a bit less sudden?
+    idk if this is better or worse? */
+  .test-connectivity:not(.wait) {
+    transition: color .4s;
+  }
+}
+
 
 html {
-  background-color: var(--bg);
+  background: var(--bg);
+  background-attachment: fixed;
   color: var(--color);
   font-family: monospace;
   font-size: 1rem;
@@ -80,6 +96,21 @@ html {
 }
 .test-connectivity.ko {
   color: #f55;
+}
+
+@media (prefers-color-scheme: light) {
+  .text-connectivity {
+    font-weight: bold;
+  }
+  .test-connectivity.wait {
+    color: rgb(106, 106, 34);
+  }
+  .test-connectivity.ok {
+    color: rgb(0, 120, 0);
+  }
+  .test-connectivity.ko {
+    color: rgb(255, 0, 0);
+  }
 }
 
 body:not(.can-test-connectivity) .if-can-test-connectivity {
