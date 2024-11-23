@@ -2,8 +2,6 @@
 
 document.body.classList.add("can-test-connectivity");
 
-console.log("Testing connectivity...");
-
 const failures = new Map();
 // default is the control group (if any tests fail, we wont check other groups)
 failures.set("default", { ok: 0, ko: 0 });
@@ -23,7 +21,7 @@ function updateFailureState() {
       (failures.get("default").ko == 0);
 
     if (isCompleteFailure) {
-      console.warn(`Probable "${failureMode}" failure mode`);
+      console.warn(`Probably "${failureMode}" failure mode`);
     }
 
     document.body.classList.toggle(
@@ -33,26 +31,50 @@ function updateFailureState() {
   }
 }
 
-Array.from(document.getElementsByClassName("test-connectivity")).forEach(async elem => {
-  elem.classList.add("wait");
-
-  let ok = false;
-  try {
-    ok = (await fetch(elem.dataset.url, {
-      signal: AbortSignal?.timeout(5000) // Timeout after 5 seconds
-    }).then(res => res.text())).includes("OK");
-  } catch (e) {
-    console.error(e);
+function testConnectivity() {
+  if (window._GLOBAL_LOCK) {
+    window.warn("testConnectivity skipped due to a global lock");
+    return;
   }
-  elem.classList.add(ok ? "ok" : "ko");
+  window._GLOBAL_LOCK = true;
 
-  const failureMode = elem.dataset.anal ?? "default";
-  failures.get(failureMode)[ok ? "ok" : "ko"]++;
+  console.log("Testing connectivity...");
 
-  console.log(ok ? "OK" : "KO", elem.dataset.url, failureMode);
-  updateFailureState();
+  const selected = Array.from(document.getElementsByClassName("test-connectivity"));
+  let remaining = selected.length;
+  selected.forEach(async elem => {
+    elem.classList.add("wait");
 
-  elem.classList.remove("wait");
-});
+    let ok = false;
+    try {
+      ok = (await fetch(elem.dataset.url, {
+        signal: AbortSignal?.timeout(5000) // Timeout after 5 seconds
+      }).then(res => res.text())).includes("OK");
+    } catch (e) {
+      console.error(e);
+    }
+    elem.classList.add(ok ? "ok" : "ko");
+
+    const failureMode = elem.dataset.anal ?? "default";
+    failures.get(failureMode)[ok ? "ok" : "ko"]++;
+
+    console.log(ok ? "OK" : "KO", elem.dataset.url, failureMode);
+    updateFailureState();
+
+    elem.classList.remove("wait");
+    if (--remaining === 0) {
+      console.log("Connectivity test completed, failures:", failures);
+      window._GLOBAL_LOCK = false;
+    }
+  });
+}
+
+// wait until all other resources are loaded
+if (document.readyState === "complete") {
+  testConnectivity();
+} else {
+  console.log("Waiting for the page to fully load...");
+  window.addEventListener("load", testConnectivity);
+}
 
 // @license-end
