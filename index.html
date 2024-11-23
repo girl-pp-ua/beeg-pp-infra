@@ -63,13 +63,13 @@
       </ul>
     </div>
 
-    <div style="display:flex;flex-direction:column;justify-content:center;align-items:center;">
-      <div style="background: rgba(0,0,0,0.5);border:3px solid pink;padding:10px;color:white">
+    <h2 class="text-center">Maintenance notices:</h2>
+    <div class="downtime-container">
+      <div class="downtime-notice">
         I'm working on transitioning :3<br>
         both oci1 and oci2 to NixOS<br>
         (some downtime's expected!)<br>
-        also, i'm experimenting with setting up<br>
-        my own authoritative DNS servers
+
       </div>
 
       <div>
@@ -77,8 +77,21 @@
         2024-11-19T18:44(CET): oci2 is taken down for maintenance<br>
         2024-11-21T17:06(CET): oci2 is back up and running<br>
         2024-11-22T00:27(CET): redlib and ntfy are back up under the new domain name<br>
-        <div class="text-center">(some oci2 services are still down)</div>
-        2024-11-23T02:12(CET): nameservers for girl.pp.ua have been updated to ns1/ns2.beeg.pp.ua<br>
+        <div class="text-center">(some oci2 services are still down; they're grayed out below)</div>
+        <br>
+      </div>
+
+      <div class="downtime-notice">
+        i'm experimenting with setting up<br>
+        my own authoritative DNS servers<br>
+        only girl.pp.ua is affected rn
+      </div>
+
+      <div>
+        <div class="text-center">=== status updates ===</div>
+        2024-11-23T02:12(CET): NS records for girl.pp.ua have been updated to ns1/ns2.girl.pp.ua<br>
+        2024-11-23T15:51(CET): should be more or less stable now<br>
+        <div class="text-center">(ns1 is disabled as oci1 is still pending NixOS deployment)</div>
       </div>
     </div>
 

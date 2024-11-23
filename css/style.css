@@ -205,3 +205,17 @@ body.can-test-connectivity:not(.failure-ipv6) .if-failure-ipv6 {
     /* transition: opacity 0.5s; */
   }
 }
+
+.downtime-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.downtime-notice {
+  background: rgba(0, 0, 0, 0.5);
+  border: 3px solid pink;
+  padding: 10px;
+  color: white;
+}
