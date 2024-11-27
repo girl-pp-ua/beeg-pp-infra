@@ -182,7 +182,8 @@ body.can-test-connectivity:not(.failure-ipv6) .if-failure-ipv6 {
   content: " 🔒";
 }
 
-.infra-link.cloudflare::after {
+.infra-link.cloudflare::after,
+.infra-link.cdn-other::after {
   content: " ☁️";
 }
 

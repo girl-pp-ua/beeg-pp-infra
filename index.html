@@ -22,7 +22,7 @@
     <p class="text-center">
       🔒 - Protected (authelia)<br>
       🔑 - Protected (password)<br>
-      ☁️ - Cloudflare proxy
+      ☁️ - Cloudflare (or other CDN/cache)
     </p>
     <!-- <p class="text-center">This page is a placeholder and will probably be replaced soon :p</p> -->
 
@@ -78,7 +78,11 @@
         2024-11-21T17:06(CET): oci2 is back up and running<br>
         2024-11-22T00:27(CET): redlib and ntfy are back up under the new domain name<br>
         2024-11-23T18:18(CET): files.beeg.pp.ua will be temporarily hosted on oci2 (brief downtime expected)<br>
-        <div class="text-center">(some oci2 services are still down; they're grayed out below)</div>
+        2024-11-27T14:24(CET): <b style="color:red">oci1 is taken down for maintenance</b><br>
+        <div class="text-center">
+          (ALL oci1 services are down; SOME oci2 services are still down; they're grayed out below)<br>
+          <b>some services will be taken down permanently after migration</b>
+        </div><br>
         <br>
       </div>
 
@@ -102,14 +106,15 @@
         <div class="infra-title">Infra</div>
         <div class="infra-host">netlify</div>
         <span class="separator"></span>
-        <a class="infra-link" href="https://infra.beeg.pp.ua/">infra.beeg.pp.ua</a>
+        <a class="infra-link cdn-other" href="https://infra.beeg.pp.ua/">infra.beeg.pp.ua</a>
       </div>
       <div class="infra-card">
         <div class="infra-title">Public Files</div>
-        <div class="infra-host">oci1</div>
+        <div class="infra-host">oci2</div>
         <span class="separator"></span>
-        <a class="infra-link" href="https://files.beeg.pp.ua/">files.beeg.pp.ua</a>
+        <a class="infra-link" href="https://files.girl.pp.ua/">files.girl.pp.ua</a>
         <a class="infra-link cloudflare" href="https://files-cf.beeg.pp.ua/">files-cf.beeg.pp.ua</a>
+        <a class="infra-link cdn-other" href="https://files-cdn.girl.pp.ua/">files-cdn.girl.pp.ua</a>
       </div>
       <div class="infra-card">
         <div class="infra-title">Redlib</div>
@@ -118,7 +123,7 @@
         <a class="infra-link" href="https://redlib.girl.pp.ua/">redlib.girl.pp.ua</a>
         <!-- <a class="infra-link cloudflare" href="https://redlib-cf.girl.pp.ua/">redlib-cf.girl.pp.ua</a> -->
       </div>
-      <div class="infra-card">
+      <div class="infra-card hopa">
         <div class="infra-title">UptimeKuma</div>
         <div class="infra-host">oci1</div>
         <span class="separator"></span>
@@ -149,7 +154,7 @@
 
     <h2 class="text-center">Private Services:</h2>
     <div class="infra-container">
-      <div class="infra-card">
+      <div class="infra-card hopa">
         <div class="infra-title">Authelia</div>
         <div class="infra-host">oci1</div>
         <span class="separator"></span>
@@ -159,12 +164,12 @@
           <a class="infra-link protected" href="https://authtest2.beeg.pp.ua/">authtest2.beeg.pp.ua</a>
         </i>
       </div>
-      <div class="infra-card">
+      <div class="infra-card hopa">
         <div class="infra-title">Netdata</div>
         <div class="infra-host">oci1, oci2</div>
         <span class="separator"></span>
         <a class="infra-link protected" href="https://netdata.oci1.beeg.pp.ua/">netdata.oci1.beeg.pp.ua</a>
-        <a class="infra-link protected hopa" href="https://netdata.oci2.beeg.pp.ua/">netdata.oci2.beeg.pp.ua</a>
+        <a class="infra-link protected" href="https://netdata.oci2.beeg.pp.ua/">netdata.oci2.beeg.pp.ua</a>
         <i class="hopa">
           Cloud: <a class="infra-link" href="https://app.netdata.cloud/">app.netdata.cloud</a>
         </i>
@@ -191,7 +196,7 @@
           ⚠️ TURN is IPv4-only
         </i>
       </div>
-      <div class="infra-card">
+      <div class="infra-card hopa">
         <div class="infra-title">webdav</div>
         <div class="infra-host">oci1</div>
         <span class="separator"></span>
