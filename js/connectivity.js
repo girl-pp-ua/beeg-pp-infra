@@ -70,11 +70,6 @@ function testConnectivity() {
 }
 
 // wait until all other resources are loaded
-if (document.readyState === "complete") {
-  testConnectivity();
-} else {
-  console.log("Waiting for the page to fully load...");
-  window.addEventListener("load", testConnectivity);
-}
+window.addEventListener("load", testConnectivity);
 
 // @license-end
