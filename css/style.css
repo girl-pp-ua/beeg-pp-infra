@@ -58,8 +58,8 @@ html {
   pointer-events: none;
   top: -1rem;
   left: -1rem;
-  width: 8rem;
-  height: 8rem;
+  width: 7rem;
+  height: 7rem;
   opacity: 0.85;
   color: transparent;
 }
@@ -71,8 +71,8 @@ html {
   #corner-flag {
     top: -1.66rem;
     left: -1.66rem;
-    width: 7rem;
-    height: 7rem;
+    width: 6rem;
+    height: 6rem;
   }
 }
 
