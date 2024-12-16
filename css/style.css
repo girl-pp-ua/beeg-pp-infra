@@ -220,3 +220,13 @@ body.can-test-connectivity:not(.failure-ipv6) .if-failure-ipv6 {
   padding: 10px;
   color: white;
 }
+
+.logo-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-top: 1rem;
+}
+.logo-wrapper img {
+  max-width: 80vw;
+}
