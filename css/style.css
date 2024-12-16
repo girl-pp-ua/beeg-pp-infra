@@ -230,3 +230,13 @@ body.can-test-connectivity:not(.failure-ipv6) .if-failure-ipv6 {
 .logo-wrapper img {
   max-width: 80vw;
 }
+
+.flex-center {
+  display:flex;
+  justify-content:center;
+  align-items:center;
+}
+
+.margin-on-top {
+  margin-top: 1rem;
+}
