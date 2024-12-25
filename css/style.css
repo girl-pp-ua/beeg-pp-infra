@@ -237,6 +237,15 @@ body.can-test-connectivity:not(.failure-ipv6) .if-failure-ipv6 {
   align-items:center;
 }
 
+.flex-column {
+  display: flex;
+  flex-direction: column;
+}
+
+.gay-ass-gap {
+  gap: 0.453454rem;
+}
+
 .huge-ass-margin-on-top {
   margin-top: 2.5rem;
 }
